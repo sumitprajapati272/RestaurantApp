@@ -1,252 +1,258 @@
-# Full-Stack Restaurant Website
+# 🍽️ Industrial-Level Full-Stack Restaurant Website Prompt
 
-## Project Overview
+## Context and Role
 
-Build a complete industrial-level full-stack Restaurant Website using the MERN Stack.
+As a Full-Stack MERN Developer specializing in modern web experiences and scalable production systems, you are responsible for designing and implementing a high-performance Restaurant Website with immersive UI animations, secure backend architecture, and a production-ready ordering ecosystem.
 
-The platform should provide:
+The application must provide a modern digital restaurant experience that combines responsive UI/UX, smooth storytelling animations, online food ordering, table reservations, secure authentication, cloud database management, and administrative controls.
 
-* Modern animated restaurant UI
-* Online food ordering system
-* Table reservation system
-* Authentication system
-* Admin dashboard
-* Cloud database integration
-* Real-time user interaction
-* Responsive production-ready experience
+The website should feel premium, interactive, scalable, and visually engaging while maintaining accessibility, responsiveness, security, and performance optimization.
 
-The application should feel like a modern premium restaurant platform similar to real-world food ordering applications.
+Additionally, the system must include secure customer interaction flows, automated email notifications, and a robust admin management dashboard.
 
 ---
 
-# Tech Stack
+# Objective
 
-## Frontend
+Develop a complete industrial-level full-stack Restaurant Website that:
 
-* React.js OR Next.js
-* Tailwind CSS
-* Framer Motion
-* Axios
-* Redux Toolkit / Context API
-
-## Backend
-
-* Node.js
-* Express.js
-* JWT Authentication
-* bcrypt
-* Nodemailer
-* Multer
-
-## Database
-
-* MongoDB
-* Mongoose ODM
+* Implements immersive scroll-based storytelling animations using Framer Motion.
+* Provides a responsive and modern restaurant UI.
+* Supports online food ordering and cart management.
+* Includes secure JWT authentication and profile management.
+* Implements a fully functional table reservation system.
+* Provides an admin dashboard for restaurant management.
+* Stores customer, reservation, menu, and order data securely.
+* Triggers automated email notifications for customer interactions.
+* Maintains production-level responsiveness, accessibility, scalability, and security.
 
 ---
 
-# Project Structure
+# UI and Animation Requirements
 
-Create separate folders:
+## Scroll-Based Storytelling Experience
 
-```bash
-project-root/
-│
-├── frontend/     → React/Next.js frontend
-├── backend/      → Node.js + Express backend
-├── admin/        → Admin dashboard
-└── assets/       → Images and static assets
-```
+Implement cinematic storytelling animations using Framer Motion:
+
+* Scroll-triggered section animations
+* Sequential content reveal
+* Smooth parallax scrolling effects
+* Staggered entrance transitions
+* Hero section motion effects
+* Interactive hover animations
+* Smooth modal transitions
+* Animated testimonials
+* Animated menu interactions
+* Animated reservation form experience
+
+Ensure animations:
+
+* Use GPU-friendly properties
+* Avoid layout thrashing
+* Maintain smooth scroll performance
+* Support reduced-motion accessibility preferences
 
 ---
 
-# FEATURES REQUIRED
+# Layout Requirements
 
-# 1. USER AUTHENTICATION
+The restaurant website must include:
+
+* Hero Section
+* About Restaurant Section
+* Featured Dishes Section
+* Full Dynamic Menu Section
+* Special Offers Section
+* Chef Showcase Section
+* Testimonials Section
+* Reservation Section
+* Online Food Ordering Section
+* Gallery Section
+* Contact Section
+* Footer Section
+* Admin Dashboard
+
+The layout must be:
+
+* Fully responsive (mobile, tablet, desktop)
+* SEO optimized
+* Accessible using semantic HTML and ARIA labels
+* Optimized for Core Web Vitals
+* Modern and visually polished
+
+---
+
+# Food Ordering System Requirements
+
+## Ordering Features
+
+Users must be able to:
+
+* Browse menu categories
+* View food details
+* Search food items
+* Filter menu items
+* Add items to cart
+* Update cart quantity
+* Remove items from cart
+* Add favorite dishes
+* Place food orders
+* Track order status
+* View order history
+
+---
+
+# Checkout System
 
 Implement:
 
-* User signup
+* Secure checkout flow
+* Delivery information form
+* Address management
+* Order summary
+* Payment integration support
+* Order confirmation page
+* Success/failure handling
+* Email notification after successful order
+
+Optional payment support:
+
+* Stripe
+* Razorpay
+
+---
+
+# Table Reservation System Requirements
+
+## Reservation Features
+
+Customers must be able to:
+
+* Book restaurant tables online
+* Select reservation date
+* Select reservation time
+* Select guest count
+* Add special requests
+* Receive booking confirmation
+
+---
+
+# Reservation Form Fields
+
+Include:
+
+* Full Name
+* Email Address
+* Phone Number
+* Date
+* Time
+* Number of Guests
+* Special Requests (optional)
+
+---
+
+# Validation Requirements
+
+Implement:
+
+* Client-side validation
+* Backend validation
+* Structured validation errors
+* Prevent invalid submissions
+* Email validation
+* Spam prevention
+* Rate limiting
+
+---
+
+# User Authentication Requirements
+
+## Authentication Features
+
+Implement:
+
+* User registration
 * User login
 * Logout functionality
 * JWT authentication
 * Password hashing using bcrypt
 * Protected routes
 * Session persistence
-* Forgot password
-* Reset password
+* Forgot password flow
+* Reset password flow
 * User profile management
 
 ---
 
-# 2. RESTAURANT LANDING PAGE
+# Admin Dashboard Requirements
 
-The homepage should contain:
+## Dashboard Features
 
-* Hero section
-* Animated headline
-* Restaurant introduction
-* Featured dishes
-* Chef showcase
-* Customer testimonials
-* Restaurant gallery
-* Special offers
-* Contact section
-* Reservation CTA section
+Implement a secure admin dashboard that includes:
 
-Animations should include:
-
-* Smooth scrolling
-* Fade animations
-* Staggered transitions
-* Hover effects
-* Scroll-triggered animations
-* Framer Motion interactions
-
----
-
-# 3. MENU MANAGEMENT SYSTEM
-
-Users should be able to:
-
-* Browse food categories
-* View dish details
-* Search menu items
-* Filter dishes
-* View pricing
-* View ratings/reviews
-* Add items to cart
-* Add favorites
-
-Admin should be able to:
-
-* Add dishes
-* Edit dishes
-* Delete dishes
-* Upload food images
-* Manage categories
-* Manage pricing
-* Toggle availability
-
----
-
-# 4. FOOD ORDERING SYSTEM
-
-Implement:
-
-* Shopping cart system
-* Quantity update
-* Remove from cart
-* Checkout flow
-* Delivery information form
-* Order summary
-* Place online orders
-* Order confirmation page
-* Order history
-* Real-time order status tracking
-
----
-
-# 5. PAYMENT INTEGRATION
-
-Implement optional payment support:
-
-* Stripe
-* Razorpay
-
-Include:
-
-* Payment success page
-* Payment failure handling
-* Secure checkout experience
-
----
-
-# 6. TABLE RESERVATION SYSTEM
-
-Allow users to:
-
-* Book restaurant tables
-* Select date
-* Select time
-* Select guest count
-* Add special requests
-
-Reservation form fields:
-
-* Full Name
-* Email
-* Phone Number
-* Date
-* Time
-* Guest Count
-* Notes
-
-Include:
-
-* Reservation validation
-* Booking confirmation
-* Reservation email notification
-
----
-
-# 7. ADMIN DASHBOARD
-
-Create a separate admin dashboard with:
-
-* Dashboard analytics
-* Total orders stats
-* Revenue analytics
+* Order management
 * Reservation management
-* User management
 * Menu management
-* Customer feedback management
-* Order status updates
+* User management
+* Sales analytics
+* Revenue statistics
+* Customer management
 * Food inventory management (optional)
+* Review moderation
+* Dashboard charts and reports
 
 Dashboard UI should include:
 
 * Sidebar navigation
-* Modern cards
-* Charts and analytics
-* Responsive layout
-* Dark/light mode
+* Interactive analytics cards
+* Responsive dashboard layout
+* Smooth UI animations
+* Dark/light mode support
 
 ---
 
-# 8. CONTACT SYSTEM
+# Dynamic Menu Management System
 
-Implement:
+The admin must be able to:
 
-* Contact form
-* Restaurant information
-* Email notifications
-* Secure message handling
-* Form validation
-* Success/error states
+* Add food items
+* Edit menu items
+* Delete dishes
+* Upload food images
+* Manage food categories
+* Update pricing
+* Toggle dish availability
 
 ---
 
-# 9. EMAIL NOTIFICATION SYSTEM
+# Backend Requirements
 
-Trigger automated emails for:
+## API Architecture
 
-* Order confirmation
-* Reservation confirmation
+Implement secure REST APIs for:
+
+* Authentication
+* Menu management
+* Cart management
+* Order management
+* Reservation handling
 * Contact form submissions
-* Admin notifications
+* User management
+* Admin operations
 
-Use:
+The backend should:
 
-* Nodemailer
-* SMTP services
-* Environment variables
+* Use modular architecture
+* Follow RESTful API standards
+* Return structured JSON responses
+* Implement centralized error handling
+* Use async/await architecture
 
 ---
 
-# 10. CLOUD DATABASE STORAGE
+# Database Requirements
 
-Store data securely in MongoDB:
+Use MongoDB to securely store:
 
 * Users
 * Orders
@@ -254,157 +260,213 @@ Store data securely in MongoDB:
 * Menu items
 * Reviews
 * Contact messages
+* Payment records
 
 Implement:
 
-* Proper MongoDB schemas
-* Relationships
-* Secure queries
-* Optimized database structure
+* Proper schema relationships
+* Indexed queries
+* Optimized database performance
+* Secure query handling
 
 ---
 
-# 11. FILE UPLOAD SYSTEM
+# Email Notification System
 
-Support uploads for:
+## Automated Email Workflow
+
+Trigger automated emails for:
+
+* Order confirmation
+* Reservation confirmation
+* Contact form submissions
+* Payment confirmation
+* Admin notifications
+
+Use:
+
+* Nodemailer
+* SMTP services
+* Transactional email APIs
+
+Store credentials securely using environment variables.
+
+---
+
+# Contact System Requirements
+
+## Contact Features
+
+Implement:
+
+* Contact form modal/page
+* Animated modal transitions
+* Form validation
+* Secure message handling
+* Email notification to restaurant owner
+* Success and failure states
+
+---
+
+# File Upload Requirements
+
+Support secure uploads for:
 
 * Food images
-* Gallery images
+* Restaurant gallery
 * User profile images
 
 Use:
 
 * Multer
-* Cloudinary/AWS S3 (optional)
+* Cloudinary or AWS S3 (optional)
 
 ---
 
-# 12. MODERN UI REQUIREMENTS
+# Security Requirements
 
-UI should feel premium and modern:
+## Security Measures
 
-* Glassmorphism/minimal design
-* Smooth animations
-* Responsive layout
-* Elegant typography
-* Soft shadows
-* Rounded corners
-* Interactive hover effects
-* Skeleton loaders
-* Toast notifications
-* Loading animations
+Sanitize and validate all inputs to prevent:
 
----
-
-# 13. SECURITY REQUIREMENTS
+* XSS attacks
+* Injection attacks
+* Unauthorized access
+* Spam submissions
+* CSRF vulnerabilities
 
 Implement:
 
-* JWT middleware
 * Helmet.js
 * Rate limiting
-* Input sanitization
-* XSS protection
-* API validation
-* Secure environment variables
+* JWT verification middleware
+* Environment variable protection
+* Secure API middleware
 * Protected admin routes
 
 ---
 
-# 14. PERFORMANCE OPTIMIZATION
+# Performance and Scalability
 
 Optimize:
 
-* Lazy loading
-* API response times
-* Database queries
-* Image optimization
 * Bundle size
 * Animation rendering
+* Database queries
+* API response times
+* Image optimization
+* Lazy loading
+* Component rendering
 
 Ensure:
 
+* High traffic scalability
+* Fast page load times
 * SEO optimization
-* Accessibility
-* Mobile responsiveness
-* Fast loading speed
+* Accessibility compliance
+* Efficient caching strategies
 
 ---
 
-# 15. OPTIONAL ADVANCED FEATURES
+# Error Handling and Documentation
 
-Implement advanced features such as:
+## Error Handling
 
-* AI chatbot
-* Real-time notifications
-* WebSocket order updates
+Handle gracefully:
+
+* Failed orders
+* Invalid reservations
+* Authentication failures
+* Payment failures
+* API validation errors
+* Email sending failures
+* Database connection failures
+
+Provide:
+
+* Structured error responses
+* Backend logging
+* Frontend error states
+* User-friendly notifications
+
+---
+
+# Documentation Requirements
+
+Provide documentation for:
+
+* Folder structure
+* API architecture
+* Database schema
+* Environment variables
+* Installation guide
+* Deployment guide
+* Authentication flow
+* Admin dashboard usage
+
+---
+
+# Technology Stack
+
+## Frontend
+
+Use:
+
+* React.js OR Next.js
+* Tailwind CSS
+* Framer Motion
+* Axios
+* Redux Toolkit / Context API
+
+---
+
+## Backend
+
+Use:
+
+* Node.js
+* Express.js
+* JWT Authentication
+* bcrypt
+* Nodemailer
+* dotenv
+* Multer
+
+---
+
+# Database
+
+Use:
+
+* MongoDB
+* Mongoose ODM
+
+---
+
+# Optional Advanced Features
+
+Implement optional advanced features such as:
+
+* AI chatbot support
+* Real-time order tracking
+* WebSocket notifications
 * Dark mode
 * Multi-language support
 * PWA support
 * Docker deployment
 * Redis caching
+* Push notifications
 
 ---
 
-# 16. FILES TO CREATE
+# Deployment Requirements
 
-## FRONTEND
-
-```bash
-frontend/
-│
-├── src/
-├── components/
-├── pages/
-├── hooks/
-├── services/
-├── context/
-├── redux/
-├── assets/
-└── utils/
-```
-
-## BACKEND
-
-```bash
-backend/
-│
-├── server.js
-├── config/
-├── routes/
-├── controllers/
-├── middleware/
-├── models/
-├── services/
-├── uploads/
-├── utils/
-└── .env
-```
-
-## ADMIN DASHBOARD
-
-```bash
-admin/
-│
-├── src/
-├── dashboard/
-├── analytics/
-├── orders/
-├── reservations/
-├── users/
-└── settings/
-```
-
----
-
-# 17. DEPLOYMENT REQUIREMENTS
-
-## Frontend
+## Frontend Deployment
 
 * Vercel
 * Netlify
 
-## Backend
+## Backend Deployment
 
 * Render
 * Railway
@@ -416,52 +478,55 @@ admin/
 
 ---
 
-# 18. FINAL OUTPUT REQUIRED
+# Output Requirements
 
-Provide:
+The final system must provide:
 
-* Complete production-ready project code
-* Folder structure
-* MongoDB setup guide
-* API architecture
-* Environment variable setup
-* Deployment guide
-* Authentication flow
-* Database schema explanation
-* Installation instructions
+* Modern animated restaurant experience
+* Secure authentication workflow
+* Functional food ordering system
+* Online table booking system
+* Production-ready backend APIs
+* Responsive admin dashboard
+* Automated email notification workflow
+* Real-time user interactions
+* Smooth checkout experience
+* Scalable MERN architecture
 
 ---
 
-# DEVELOPMENT FLOW
+# Development Flow
 
 Build the project step-by-step:
 
-1. Backend setup
+1. Backend architecture setup
 2. MongoDB connection
 3. Authentication APIs
 4. Menu APIs
 5. Reservation APIs
 6. Order management APIs
 7. Frontend UI development
-8. Cart and checkout system
-9. Admin dashboard
-10. Payment integration
-11. Email notification system
-12. Final optimization and deployment
+8. Framer Motion animation system
+9. Cart and checkout flow
+10. Admin dashboard implementation
+11. Payment integration
+12. Email notification system
+13. Security optimization
+14. Final deployment and testing
 
 ---
 
-# FINAL GOAL
+# Final Goal
 
-The final application should work as a complete production-ready Restaurant Website with:
+The final application should function as a complete industrial-level Restaurant Website platform with:
 
-* Modern animated UI
+* Premium animated UI/UX
 * Online food ordering
+* Secure authentication
 * Table reservation system
-* JWT authentication
-* Admin dashboard
-* MongoDB cloud storage
-* Secure backend architecture
-* Real-time interactions
-* Premium responsive design
-* Industrial-level scalability
+* Admin management dashboard
+* Cloud database integration
+* Email notification workflows
+* Responsive design
+* Production-ready deployment architecture
+* High scalability and maintainability
