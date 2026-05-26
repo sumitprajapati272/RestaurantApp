@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ember & Oak — Fine Dining Experience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">EMBER &amp; OAK</a>
+  <ul class="nav-links">
+    <li><a href="#about">Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#specials">Offers</a></li>
+    <li><a href="#chefs">Chefs</a></li>
+    <li><a href="#reservation">Reserve</a></li>
+    <li><a href="#order">Order</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <button class="btn-outline" style="font-size:12px;padding:10px 20px;" onclick="openAuth()">Sign In</button>
+    <button class="nav-cta" onclick="openAdmin()">Admin</button>
+  </div>
+  <div class="hamburger" onclick="toggleMobileNav()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="toggleMobileNav()">Story</a>
+  <a href="#menu" onclick="toggleMobileNav()">Menu</a>
+  <a href="#specials" onclick="toggleMobileNav()">Offers</a>
+  <a href="#chefs" onclick="toggleMobileNav()">Chefs</a>
+  <a href="#reservation" onclick="toggleMobileNav()">Reserve</a>
+  <a href="#order" onclick="toggleMobileNav()">Order</a>
+  <a href="#contact" onclick="toggleMobileNav()">Contact</a>
+  <button class="btn-primary" onclick="openAuth();toggleMobileNav();">Sign In</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Est. 2009 &nbsp;·&nbsp; Fine Dining &nbsp;·&nbsp; New Delhi</div>
+    <h1 class="hero-title">Where Fire Meets <em>Flavour</em></h1>
+    <p class="hero-subtitle">An Unforgettable Culinary Journey</p>
+    <p class="hero-desc">Nestled in the heart of the city, Ember & Oak celebrates the ancient artistry of wood-fire cooking with modern sensibility and uncompromising ingredients.</p>
+    <div class="hero-btns">
+      <a href="#reservation" class="btn-primary">Reserve a Table</a>
+      <a href="#menu" class="btn-outline">Explore Menu</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Crafted with <em>Passion</em>, Served with Soul</h2>
+        <p class="section-desc">Ember & Oak began as a dream — to honour India's rich culinary tapestry while weaving in global techniques. Every dish tells a story of provenance: sourced from local farms, aged in our cellars, and kissed by fire in our custom wood-burning hearths.</p>
+        <p class="section-desc">We believe great dining is theatre. From the moment you enter, every sense is engaged — the warm amber light, the gentle crackle of oak, the aromas that greet you like an old friend.</p>
+        <div class="about-stats">
+          <div><div class="stat-num">15+</div><div class="stat-label">Years of Excellence</div></div>
+          <div><div class="stat-num">42</div><div class="stat-label">Signature Dishes</div></div>
+          <div><div class="stat-num">6</div><div class="stat-label">Awards Won</div></div>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-visual-inner">
+          <div class="about-visual-text">🔥</div>
+          <p style="color:var(--muted);font-family:var(--font-display);font-style:italic;font-size:18px;margin-top:16px;">Fire &amp; Finesse</p>
+        </div>
+        <div class="about-badge"><span>★ 4.9</span>Rated India's Best</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px;">
+      <div>
+        <div class="section-label">Our Menu</div>
+        <h2 class="section-title">A Symphony of <em>Tastes</em></h2>
+      </div>
+      <div class="menu-categories">
+        <button class="cat-btn active" onclick="filterMenu(this,'all')">All</button>
+        <button class="cat-btn" onclick="filterMenu(this,'starters')">Starters</button>
+        <button class="cat-btn" onclick="filterMenu(this,'mains')">Mains</button>
+        <button class="cat-btn" onclick="filterMenu(this,'desserts')">Desserts</button>
+        <button class="cat-btn" onclick="filterMenu(this,'drinks')">Drinks</button>
+      </div>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section id="specials">
+  <div class="container">
+    <div class="section-label reveal">Today's Specials</div>
+    <h2 class="section-title reveal">Exclusive <em>Offers</em></h2>
+    <div class="specials-grid" style="margin-top:48px;">
+      <div class="special-card reveal">
+        <div class="section-label" style="font-size:10px;">Chef's Weekend Set Menu</div>
+        <div class="special-price-tag">
+          <span class="currency">₹</span>
+          <span class="amount">1999</span>
+        </div>
+        <h3 style="font-family:var(--font-display);font-size:22px;margin-bottom:12px;">5-Course Tasting Menu</h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.7;">Starter · Soup · Sorbet · Main · Dessert. Paired with wines on request. Available Friday–Sunday only.</p>
+        <div style="margin-top:24px;">
+          <div class="section-label" style="margin-bottom:12px;font-size:10px;">Offer Ends In</div>
+          <div class="special-timer">
+            <div class="timer-unit"><div class="timer-num" id="th">00</div><div class="timer-label">Hours</div></div>
+            <div class="timer-unit"><div class="timer-num" id="tm">00</div><div class="timer-label">Mins</div></div>
+            <div class="timer-unit"><div class="timer-num" id="ts">00</div><div class="timer-label">Secs</div></div>
+          </div>
+        </div>
+        <button class="btn-primary" style="margin-top:32px;" onclick="scrollTo('#reservation')">Claim Offer</button>
+      </div>
+      <div class="specials-list reveal">
+        <div class="special-item">
+          <div class="special-icon">🥂</div>
+          <div class="special-info">
+            <div class="special-name">Happy Hour Cocktails</div>
+            <div style="font-size:13px;color:var(--muted);margin:4px 0 8px;">Daily 5PM–7PM · All signature cocktails</div>
+            <span class="special-orig">₹620</span> <span class="special-new">₹399</span>
+          </div>
+        </div>
+        <div class="special-item">
+          <div class="special-icon">🎂</div>
+          <div class="special-info">
+            <div class="special-name">Complimentary Dessert</div>
+            <div style="font-size:13px;color:var(--muted);margin:4px 0 8px;">Birthday Celebrations · Must mention at booking</div>
+            <span class="special-orig">₹480</span> <span class="special-new">FREE</span>
+          </div>
+        </div>
+        <div class="special-item">
+          <div class="special-icon">🍱</div>
+          <div class="special-info">
+            <div class="special-name">Business Lunch Special</div>
+            <div style="font-size:13px;color:var(--muted);margin:4px 0 8px;">Mon–Fri 12PM–3PM · 3-Course Set Lunch</div>
+            <span class="special-orig">₹1,100</span> <span class="special-new">₹749</span>
+          </div>
+        </div>
+        <div class="special-item">
+          <div class="special-icon">👨‍👩‍👧‍👦</div>
+          <div class="special-info">
+            <div class="special-name">Family Sunday Brunch</div>
+            <div style="font-size:13px;color:var(--muted);margin:4px 0 8px;">Sundays · Unlimited Brunch · Kids under 10 free</div>
+            <span class="special-orig">₹2,200</span> <span class="special-new">₹1,499</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHEFS -->
+<section id="chefs">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:64px;">
+      <div class="section-label">The Team</div>
+      <h2 class="section-title">The Artisans <em>Behind</em> the Flame</h2>
+    </div>
+    <div class="chefs-grid">
+      <div class="chef-card reveal">
+        <div class="chef-avatar"><span class="chef-initials">RA</span></div>
+        <div class="chef-name">Rajan Anand</div>
+        <div class="chef-role">Executive Chef</div>
+        <p class="chef-bio">Trained at Le Cordon Bleu Paris, Chef Rajan brings 22 years of culinary mastery, blending classical French techniques with bold Indian flavours.</p>
+      </div>
+      <div class="chef-card reveal">
+        <div class="chef-avatar"><span class="chef-initials">PM</span></div>
+        <div class="chef-name">Priya Mehta</div>
+        <div class="chef-role">Pastry Chef</div>
+        <p class="chef-bio">A graduate of CIA New York, Priya reimagines dessert as architecture — each creation a delicate balance of texture, temperature, and surprise.</p>
+      </div>
+      <div class="chef-card reveal">
+        <div class="chef-avatar"><span class="chef-initials">AK</span></div>
+        <div class="chef-name">Arjun Kapoor</div>
+        <div class="chef-role">Grill & Fire Chef</div>
+        <p class="chef-bio">Arjun has spent a decade perfecting the ancient craft of live-fire cooking, sourcing heirloom wood varieties to craft flavours that can only come from flame.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="padding:100px 0;">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:64px;">
+      <div class="section-label">Guest Voices</div>
+      <h2 class="section-title">What Our Guests <em>Say</em></h2>
+    </div>
+  </div>
+  <div style="overflow:hidden;">
+    <div class="testimonials-track" id="testimonialsTrack"></div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section id="reservation">
+  <div class="container">
+    <div class="reservation-grid">
+      <div class="reservation-info reveal">
+        <div class="section-label">Book a Table</div>
+        <h2 class="section-title">Reserve Your <em>Evening</em></h2>
+        <p>Every great story deserves the perfect setting. Whether it's an intimate dinner for two or a celebration with loved ones, we'll craft an unforgettable experience around your table.</p>
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon">🕰</div>
+            <div class="info-text">
+              <label>Hours</label>
+              <span>Tue–Sun: 12PM–3PM, 7PM–11PM</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div class="info-text">
+              <label>Location</label>
+              <span>42 Mehrauli Road, New Delhi — 110030</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div class="info-text">
+              <label>Phone</label>
+              <span>+91 11 4567 8901</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div class="info-text">
+              <label>Email</label>
+              <span>hello@emberandoak.in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reservation-form reveal" id="reservationForm">
+        <div class="section-label" style="margin-bottom:24px;">Your Details</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="res-name" placeholder="Aarav Sharma">
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" id="res-email" placeholder="aarav@email.com">
+          </div>
+          <div class="form-group">
+            <label>Phone *</label>
+            <input type="tel" id="res-phone" placeholder="+91 98765 43210">
+          </div>
+          <div class="form-group">
+            <label>Guests *</label>
+            <select id="res-guests">
+              <option value="">Select guests</option>
+              <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option>
+              <option>4 Guests</option><option>5 Guests</option><option>6+ Guests</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Date *</label>
+            <input type="date" id="res-date">
+          </div>
+          <div class="form-group">
+            <label>Time *</label>
+            <select id="res-time">
+              <option value="">Select time</option>
+              <option>12:00 PM</option><option>12:30 PM</option><option>1:00 PM</option>
+              <option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option>
+              <option>8:30 PM</option><option>9:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Special Requests</label>
+            <textarea id="res-special" placeholder="Dietary requirements, occasion, seating preferences…"></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitReservation()">Confirm Reservation</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px;">
+      <div class="section-label">Online Ordering</div>
+      <h2 class="section-title">Bring Ember &amp; Oak <em>Home</em></h2>
+    </div>
+    <div class="order-layout">
+      <div>
+        <div class="menu-categories" style="margin-bottom:32px;">
+          <button class="cat-btn active" onclick="filterOrder(this,'all')">All</button>
+          <button class="cat-btn" onclick="filterOrder(this,'starters')">Starters</button>
+          <button class="cat-btn" onclick="filterOrder(this,'mains')">Mains</button>
+          <button class="cat-btn" onclick="filterOrder(this,'desserts')">Desserts</button>
+        </div>
+        <div class="order-items-grid" id="orderGrid"></div>
+      </div>
+      <div class="cart-panel">
+        <div class="cart-title">
+          Your Order <span class="cart-badge" id="cartBadge">0</span>
+        </div>
+        <input type="text" class="delivery-input" placeholder="🏠 Delivery address…" id="deliveryAddress">
+        <div class="cart-items" id="cartItems">
+          <div class="cart-empty">Your cart is empty.<br>Add something delicious!</div>
+        </div>
+        <hr class="cart-divider">
+        <div class="cart-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+        <div class="cart-row"><span>Delivery</span><span>₹49</span></div>
+        <div class="cart-row"><span>GST (5%)</span><span id="cartTax">₹0</span></div>
+        <div class="cart-total"><span>Total</span><span id="cartTotal">₹49</span></div>
+        <button class="cart-checkout" onclick="openCheckout()">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">We'd Love to <em>Hear</em> from You</h2>
+        <div class="contact-details">
+          <div class="contact-item">
+            <h4>Address</h4>
+            <p>42 Mehrauli Road, Qutub Minar Area<br>New Delhi, Delhi 110030</p>
+          </div>
+          <div class="contact-item">
+            <h4>Reservations</h4>
+            <p><a href="tel:+911145678901">+91 11 4567 8901</a></p>
+          </div>
+          <div class="contact-item">
+            <h4>Email</h4>
+            <p><a href="mailto:hello@emberandoak.in">hello@emberandoak.in</a></p>
+          </div>
+          <div class="contact-item">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a class="social-link" href="#" aria-label="Instagram">📸</a>
+              <a class="social-link" href="#" aria-label="Facebook">📘</a>
+              <a class="social-link" href="#" aria-label="Twitter">🐦</a>
+              <a class="social-link" href="#" aria-label="YouTube">▶️</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reservation-form reveal" style="background:rgba(255,255,255,0.02);">
+        <div class="section-label" style="margin-bottom:24px;">Send a Message</div>
+        <div class="form-grid">
+          <div class="form-group"><label>Name</label><input type="text" id="ct-name" placeholder="Your name"></div>
+          <div class="form-group"><label>Email</label><input type="email" id="ct-email" placeholder="your@email.com"></div>
+          <div class="form-group full"><label>Subject</label><input type="text" id="ct-subject" placeholder="What's on your mind?"></div>
+          <div class="form-group full"><label>Message</label><textarea id="ct-msg" style="min-height:120px;" placeholder="Tell us more…"></textarea></div>
+        </div>
+        <button class="form-submit" onclick="submitContact()">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <span class="logo">Ember &amp; Oak</span>
+      <p>Where ancient craft meets modern elegance. Celebrating the art of fire, the beauty of ingredients, and the joy of great company.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#menu">The Menu</a></li>
+        <li><a href="#chefs">Our Chefs</a></li>
+        <li><a href="#specials">Specials</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#reservation">Reservations</a></li>
+        <li><a href="#order">Online Order</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#" onclick="openAdmin()">Admin</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Hours</h5>
+      <ul>
+        <li><a href="#">Mon: Closed</a></li>
+        <li><a href="#">Tue–Fri: 12–3, 7–11</a></li>
+        <li><a href="#">Sat–Sun: 11–11</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Ember &amp; Oak. All rights reserved.</p>
+    <p style="color:var(--muted);font-size:11px;letter-spacing:1px;">Privacy Policy &nbsp;·&nbsp; Terms of Service</p>
+  </div>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal">
+    <h2 class="modal-title">Welcome Back</h2>
+    <p class="modal-sub">Sign in to manage your orders and reservations</p>
+    <div class="modal-tabs">
+      <button class="modal-tab active" onclick="switchTab(this,'signin')">Sign In</button>
+      <button class="modal-tab" onclick="switchTab(this,'signup')">Create Account</button>
+    </div>
+    <div id="signinForm" class="modal-form">
+      <input type="email" placeholder="Email address">
+      <input type="password" placeholder="Password">
+      <button class="modal-btn" onclick="simulateLogin()">Sign In</button>
+      <button type="button" style="background:transparent;border:none;color:var(--gold);font-size:12px;cursor:pointer;margin-top:-8px;">Forgot password?</button>
+    </div>
+    <div id="signupForm" class="modal-form" style="display:none;">
+      <input type="text" placeholder="Full name">
+      <input type="email" placeholder="Email address">
+      <input type="tel" placeholder="Phone number">
+      <input type="password" placeholder="Create password">
+      <button class="modal-btn" onclick="simulateLogin()">Create Account</button>
+    </div>
+    <button class="modal-close-btn" onclick="closeAuth()">Cancel</button>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal checkout-modal">
+    <div id="checkoutView">
+      <h2 class="modal-title">Complete Order</h2>
+      <p class="modal-sub">Review your items and confirm your order</p>
+      <div class="checkout-summary" id="checkoutSummary"></div>
+      <div class="checkout-total-row"><span>Total</span><span id="checkoutTotal" style="color:var(--gold);">₹0</span></div>
+      <div class="modal-form" style="margin-top:24px;">
+        <input type="text" placeholder="Full Name *" id="co-name">
+        <input type="text" placeholder="Delivery Address *" id="co-addr">
+        <input type="tel" placeholder="Phone *" id="co-phone">
+        <input type="text" placeholder="Card Number (optional)" maxlength="19" id="co-card">
+        <button class="modal-btn" onclick="placeOrder()">Place Order</button>
+      </div>
+    </div>
+    <div id="orderSuccess" style="display:none;" class="success-state">
+      <span class="success-icon">✅</span>
+      <div class="success-title">Order Placed!</div>
+      <p class="success-desc">Your order is being prepared. You'll receive a confirmation shortly.</p>
+      <div class="order-id-display" id="orderIdDisplay">#EMB-0000</div>
+      <button class="modal-btn" style="margin-top:24px;" onclick="closeCheckout()">Close</button>
+    </div>
+    <button class="modal-close-btn" onclick="closeCheckout()" id="checkoutCancelBtn">Cancel</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-panel">
+    <div class="admin-header">
+      <div class="admin-title">⚙️ Ember & Oak — Admin Dashboard</div>
+      <button class="admin-close" onclick="closeAdmin()">✕ Close</button>
+    </div>
+    <div class="admin-body">
+      <div class="admin-sidebar">
+        <div class="admin-nav-item active" onclick="adminSection(this,'overview')">📊 Overview</div>
+        <div class="admin-nav-item" onclick="adminSection(this,'orders')">🛒 Orders</div>
+        <div class="admin-nav-item" onclick="adminSection(this,'reservations')">📅 Reservations</div>
+        <div class="admin-nav-item" onclick="adminSection(this,'users')">👤 Users</div>
+        <div class="admin-nav-item" onclick="adminSection(this,'menu-mgmt')">🍽 Menu</div>
+      </div>
+      <div class="admin-content">
+        <!-- OVERVIEW -->
+        <div class="admin-panel-section active" id="section-overview">
+          <div class="admin-stats">
+            <div class="admin-stat"><div class="admin-stat-num">₹2.4L</div><div class="admin-stat-label">Today's Revenue</div></div>
+            <div class="admin-stat"><div class="admin-stat-num">48</div><div class="admin-stat-label">Orders Today</div></div>
+            <div class="admin-stat"><div class="admin-stat-num">12</div><div class="admin-stat-label">Reservations</div></div>
+            <div class="admin-stat"><div class="admin-stat-num">246</div><div class="admin-stat-label">Total Customers</div></div>
+          </div>
+          <div class="section-label" style="margin-bottom:16px;">Weekly Revenue</div>
+          <div class="admin-chart" id="adminChart"></div>
+        </div>
+        <!-- ORDERS -->
+        <div class="admin-panel-section" id="section-orders">
+          <div class="section-label" style="margin-bottom:20px;">Recent Orders</div>
+          <table class="admin-table">
+            <thead><tr><th>Order ID</th><th>Customer</th><th>Items</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody id="ordersTableBody"></tbody>
+          </table>
+        </div>
+        <!-- RESERVATIONS -->
+        <div class="admin-panel-section" id="section-reservations">
+          <div class="section-label" style="margin-bottom:20px;">Upcoming Reservations</div>
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Date</th><th>Time</th><th>Guests</th><th>Status</th></tr></thead>
+            <tbody id="reservationsTableBody"></tbody>
+          </table>
+        </div>
+        <!-- USERS -->
+        <div class="admin-panel-section" id="section-users">
+          <div class="section-label" style="margin-bottom:20px;">Registered Users</div>
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Orders</th><th>Since</th></tr></thead>
+            <tbody>
+              <tr><td>Aarav Sharma</td><td>aarav@gmail.com</td><td>7</td><td>Jan 2025</td></tr>
+              <tr><td>Priya Nair</td><td>priya.n@outlook.com</td><td>4</td><td>Mar 2025</td></tr>
+              <tr><td>Kabir Mehta</td><td>k.mehta@work.com</td><td>12</td><td>Nov 2024</td></tr>
+              <tr><td>Riya Singh</td><td>riya.s@gmail.com</td><td>2</td><td>May 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- MENU MGMT -->
+        <div class="admin-panel-section" id="section-menu-mgmt">
+          <div class="section-label" style="margin-bottom:20px;">Menu Items</div>
+          <table class="admin-table">
+            <thead><tr><th>Item</th><th>Category</th><th>Price</th><th>Actions</th></tr></thead>
+            <tbody id="menuAdminBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
