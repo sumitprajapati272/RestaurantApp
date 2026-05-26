@@ -53,24 +53,22 @@ Ensure animations:
 
 ---
 
-# Layout Requirements
+# Layout Specifications
 
-The restaurant website must include:
+There should be:
 
-* Hero Section
-* About Restaurant Section
-* Featured Dishes Section
-* Full Dynamic Menu Section
-* Special Offers Section
-* Chef Showcase Section
-* Testimonials Section
-* Reservation Section
-* Online Food Ordering Section
-* Gallery Section
-* Contact Section
-* Footer Section
-* Admin Dashboard
-
+* Hero Section – Contains the main banner, name of the restaurant, headlines, Call-To-Action buttons, and animated intro.
+* About Restaurant Section – Contains information about the restaurant story, vision, ambience, and experience.
+* Featured Dishes Section – Contains the featured or signature dishes having attractive food card designs.
+* Full Dynamic Menu Section – Contains all categories of the menu items along with prices, descriptions, and filters.
+* Special Offer Section – Contains all the discounts, combos, and offers that can be availed by the customers.
+* Chefs’ Introduction Section – Introduces the chefs, their specialties, achievements, and restaurant’s overall cuisine experience.
+* Customer Testimonial Section – Contains customer reviews along with ratings and animation effects.
+* Booking Section – Helps the customers book tables at the restaurant using an interactive calendar.
+* Food Ordering Section – Helps to browse dishes, manage cart, and place the orders.
+* Gallery Section – Contains images of interior design, food preparation process, dining experience, events, and more.
+* Contact Section – Enables customers to contact the restaurant via a form.
+* Footer Section – Contains social media icons, policy terms, copyrights, and more.
 The layout must be:
 
 * Response for all devices (mobile, tablets, and computers)
@@ -105,18 +103,23 @@ Users must be able to:
 
 ---
 
-# Checkout System
+# Checkout Process
 
 Implement:
 
-* Secure checkout flow
-* Delivery information form
-* Address management
-* Order summary
-* Payment integration support
-* Order confirmation page
-* Success/failure handling
-* Email notification after successful order
+* Checkout process security – Design a secured multi-step checkout process that securely takes care of the cart verification, pricing calculation, user authentication, payment and order confirmation processes while preventing the occurrence of duplicated or incorrect order creation.
+
+* Delivery form – Build a validated delivery form where customers can enter relevant delivery details such as full name, contact number, e-mail id, delivery location, city name, ZIP code, delivery instructions and more before placing an order.
+
+* Address management features – Enable users to save, update, delete and even reuse different delivery addresses from their profile dashboard page.
+
+* Order summary page – Show the order summary which will display all the selected foods, total amount of quantity purchased, sub-total amount, taxes applied, delivery charges, discount applied and net pay amount in real time before payment confirmation.
+
+* Integration support for online payment systems – Integrate the platform with various online payment methods such as Stripe, Razorpay and other similar systems for secure token management and transactional verification.
+
+* Confirmation page – Direct the users towards the confirmation page after a successful checkout where it will show the unique order ID, payment status, expected delivery time and order details.
+
+* Success/error handling
 
 Optional payment support:
 
@@ -139,18 +142,23 @@ Customers must be able to:
 * Receive booking confirmation
 
 ---
+# Fields in the Reservation Form
 
-# Reservation Form Fields
+These should include:
 
-Include:
+* Full Name - This will be used by the website to capture the full name of the client who needs to make the reservation.
 
-* Full Name
-* Email Address
-* Phone Number
-* Date
-* Time
-* Number of Guests
-* Special Requests (optional)
+* Email Address - It is important to gather information about the email address from the client so that the reservation can be notified using that method.
+
+* Phone Number - This will ensure that you have the means to contact the client in case any other follow up actions are necessary.
+
+* Date - Ensure that the client can pick a date for their reservation from the drop-down menu.
+
+* Time - The clients will pick the time during which they wish to come in for their reservation.
+
+* Number of Guests - The client will inform us about how many people will join them on that day.
+
+* Special Requests (Optional)
 
 ---
 
@@ -158,13 +166,19 @@ Include:
 
 Implement:
 
-* Client-side validation
-* Backend validation
-* Structured validation errors
-* Prevent invalid submissions
-* Email validation
-* Spam prevention
-* Rate limiting
+* Client-side validation – Perform validation on client side of all fields in any form prior to submission using appropriate validation for required fields, correct lengths, format and emptiness.
+
+* Server side validation – Implement server-side validation for all incoming requests for data consistency, sanitization of any user input to avoid manipulation attempts, and for any data that bypasses frontend validation checks.
+
+* Structured validation response – Provide validation feedback in a structured manner using JSON with detailed information about failed validation of each specific field as well as status code and meaningful error messages.
+
+* Invalid data prevention – Prevent sending incomplete, repeated, empty, malformed or non-authorized form data by performing proper validation and controlling form submission attempts.
+
+* Email validation – Validate the email address using secure regular expression and appropriate back-end checks to assure proper email structure.
+
+* Spam protection – Integrate CAPTCHA mechanism into your forms and APIs to prevent any spamming attempts. Additionally, use honeypot fields and suspicious activity checks to detect and block suspicious activities.
+
+* Rate limiting – Perform API rate limiting per one user or same IP to limit number of API calls from the same source.
 
 ---
 
@@ -189,227 +203,273 @@ Implement:
 
 # Admin Dashboard Requirements
 
-## Dashboard Features
+## Features of the Dashboard
 
-Implement a secure admin dashboard that includes:
+A secure admin dashboard must include the following features:
 
-* Order management
-* Reservation management
-* Menu management
-* User management
-* Sales analytics
-* Revenue statistics
-* Customer management
-* Food inventory management (optional)
-* Review moderation
-* Dashboard charts and reports
+* Order Management - Enable administrators to manage orders such as tracking, viewing, updating, confirming and cancelling orders of customers in real-time fashion.
 
-Dashboard UI should include:
+* Table/Reservation Management - Help administrators manage tables and reservations by monitoring booking, approving/rejecting reservations and managing customer booking requests.
 
-* Sidebar navigation
-* Interactive analytics cards
-* Responsive dashboard layout
-* Smooth UI animations
-* Dark/light mode support
+* Menu Management - Provide dynamic menu management facility through which food items can be added, edited, categorized and deleted.
 
----
+* User Management - Help administrators manage customers' accounts by tracking their activities, modifying roles of users and suspending accounts if necessary.
+
+* Sales Analytics - Provide comprehensive analytics dashboard through which performance of the restaurant such as total sales, bestselling dishes, order growth etc. can be monitored.
+
+* Revenue Statistics - Enable administrators to track income from various sources on daily, weekly, monthly and yearly basis.
+* Customer management – Admins must have the capability to track customers’ engagement, review customer order history, manage customer feedback, and understand customer behavioral patterns.
+
+* Food inventory management (optional) – This feature allows the tracking of ingredients, stock levels, alerts on low stocks, and other operations related to restaurant inventory.
+
+* Reviews management – The administrator will have the ability to approve, disapprove, edit, or delete inappropriate customer reviews and rating scores.
+
+* Dashboard graphics and reporting – The system should be able to display dynamic charts, graphs, performance metrics, and reports using modern analytical visualization tools.
+
+The other capabilities that the dashboard can have include the following:
+
+* Real-time update of the dashboard for orders, reservation, and customer activities without full-page refresh.
+
+* Access control for administrative functions based on role.
+
+* Searching, filtering, sorting, and pagination capabilities for better management of large sets of restaurant information.
+
+* Logs and monitoring of actions taken by the administrator.
+
+The UI design for Dashboard will comprise of:
+
+* Navigation bar - It will be helpful in creating an organized menu to enable users to navigate easily through the orders, reservations, analytics, users, menu, and other settings.
+
+* Live card analytics - Creating dashboard cards in an appealing way with information that includes analytics.
+
+* Mobile responsive Dashboard UI design - This should work on mobile phones, tablets, laptops, and personal computers.
+
+* Modern animations - Using lightweight animation and transitions to enhance interactions by users on the dashboard.
+
+* Dark mode/Light mode - This will allow users to toggle to light and dark mode on a Dashboard UI page.
 
 # Dynamic Menu Management System
 
-The admin must be able to:
+Administrator needs to have the capability to:
 
-* Add food items
-* Edit menu items
-* Delete dishes
-* Upload food images
-* Manage food categories
-* Update pricing
-* Toggle dish availability
+* Add food items – Should enable administrators to dynamically add food items on the website by inputting the dish name, its description, category, ingredients, pricing, ratings, and availability status.
 
+* Edit food items – Should allow admins to edit and modify the details of the food items such as changing pricing and descriptions and categories or food images if required.
+
+* Delete dishes – Should enable administrators to delete any old or not available food items from the restaurant's menu without violating any database consistency rules or security.
+
+* Upload food images – Should enable secure file upload of images for the menu items with proper middleware and cloud-based storage services to maintain quality food images.
+
+* Manage food categories – Should enable admins to categorize dishes based on their types like starters, main course, desserts, beverages, and special dishes.
+
+* Edit pricing – Should support dynamic updating of pricing for food dishes and combos.
 ---
 
-# Backend Requirements
+# Backend requirements
 
 ## API Architecture
 
-Implement secure REST APIs for:
+Create the following APIs:
 
-* Authentication
-* Menu management
-* Cart management
-* Order management
-* Reservation handling
-* Contact form submissions
-* User management
-* Admin operations
+Authentication - Create APIs for the process of authentication, including registration, login, logout, reset password, create token, and authentication using JWTs via protected routes.
+
+Menu Management - APIs that handle menu creation, update, delete, get, search, and classify menus.
+
+Cart Management - APIs that will help to handle the processes performed in the cart such as add products in the cart, modify cart, delete items in cart, and total of cart.
+
+Order Food - APIs for handling order food. These include place an order, change order status, get orders of customers, pay for the order, and perform other order-related actions.
+
+Table Reservation - APIs for handling table reservation. These include modify reservation, confirm reservations, handle guest reservations, and cancel reservations.
+
+Contact Form - APIs for handling contact form actions. These include validate contact form, create contact form, and email contact forms to restaurant admins.
+
+Users - APIs for handling information of users, locations of users, users' session and others user data.
 
 The backend should:
 
-* Use modular architecture
-* Follow RESTful API standards
-* Return structured JSON responses
-* Implement centralized error handling
-* Use async/await architecture
+* Be based on modular architecture – Build backend code into modular components like routes, controllers, middleware, services, models, and utilities.
+
+* Be built according to RESTful API specifications – Create backend APIs based on proper use of HTTP requests, standardized endpoints, status codes, request and response logic.
+
+* Return structured JSON responses – Ensure that all APIs return JSON responses in a structured format for both success and error cases.
+
+* Have centralized error handling – Design a centralized backend error handling framework that handles validation, server-side, authentication, and other backend related errors.
+
+* Utilize the async/await pattern – Develop backend logic using the async/await approach to create better scalability and readable code.
 
 ---
+# Database requirements
 
-# Database Requirements
+Using MongoDB, store the following:
 
-Use MongoDB to securely store:
+* Users – All information related to users, user accounts, passwords, roles, and profiles should be stored securely. In addition to that, save users' stored addresses.
 
-* Users
-* Orders
-* Reservations
-* Menu items
-* Reviews
-* Contact messages
-* Payment records
+* Orders – All the information about orders, deliveries, payment options, and transaction information should be securely stored.
 
-Implement:
+* Reservations – All information related to reservations booked by customers such as booking date, number of people, status, and special requirements should be securely stored.
 
-* Proper schema relationships
-* Indexed queries
-* Optimized database performance
-* Secure query handling
+* Menu items – Information about all types of food item such as its title, description, cost, picture, category, availability, and ratings should be securely stored.
+
+* Reviews – Feedbacks or information provided by customers regarding their visit and dish should be securely stored.
+
+* Contact messages – Message posted on the website's contact form should be securely stored.
+
+Implement the following:
+
+* Schema relationships – A proper schema design will be done to establish relationships between users, orders, reservations, reviews, and menu items using object IDs.
+
+* Indexing of queries – Query optimization will be done through indexing.
+
+* Performance optimization – Efficient query and schema designs should be implemented.
 
 ---
 
 # Email Notification System
 
-## Automated Email Workflow
+## Automation Process
 
-Trigger automated emails for:
+Send emails automatically for:
 
-* Order confirmation
-* Reservation confirmation
-* Contact form submissions
-* Payment confirmation
-* Admin notifications
+* Order confirmation emails - Send order confirmation emails automatically once an order is placed containing order information, delivery information, payment information, and date of delivery.
+
+* Reservation confirmation emails - Send reservation confirmation emails automatically with information about date of booking, timing, guest details, and contact information of restaurant.
+
+* Contact form submission emails - Send automatic emails to restaurant manager when customers send their queries through the contact form on the restaurant website.
+
+* Payment confirmation emails - Send automatic emails to customers confirming their payment and providing transaction information.
+
+* Admin emails - Notify administrator regarding different events happening within the application.
 
 Use:
 
-* Nodemailer
-* SMTP services
-* Transactional email APIs
+* Nodemailer - Use Nodemailer module in Node.js for creating automatic emails, using features of SMTP authentication, template generation, and automation.
 
-Store credentials securely using environment variables.
+* SMTP email services - Use SMTP email services to send transactional emails, automatic emails, and alert emails.
 
----
+* Transactional email APIs - Use transactional email APIs to automate emails in production environments.
+
+Email credentials should be saved in environment variables.
 
 # Contact System Requirements
 
-## Contact Features
+## Contact System Features
 
-Implement:
+For it to have:
 
-* Contact form modal/page
-* Animated modal transitions
-* Form validation
-* Secure message handling
-* Email notification to restaurant owner
-* Success and failure states
+* A form in its modal page
+* The animations of the modals
+* Validation of forms
+* Handling of messages securely
+* Notification email to restaurant owner
+* States of success and fail for contact
 
 ---
 
-# File Upload Requirements
+# File Upload System Requirements
 
-Support secure uploads for:
+Security of the file uploads in:
 
-* Food images
-* Restaurant gallery
-* User profile images
+* Uploading pictures of the food items
+* Uploading images for galleries of restaurants
+* Uploading of users profile pictures
 
-Use:
+The system will utilize:
 
-* Multer
-* Cloudinary or AWS S3 (optional)
+* Multer middleware
+* Cloudinary or AWS S3 service for storage (Optional)
 
 ---
 
 # Security Requirements
 
-## Security Measures
+## Security System Features
 
-Sanitize and validate all inputs to prevent:
+Input sanitization and validation of the system from the following attacks:
 
-* XSS attacks
-* Injection attacks
-* Unauthorized access
-* Spam submissions
-* CSRF vulnerabilities
+* XSS attack - By validating user input through sanitizing of user inputs and safe output of dynamic data.
 
-Implement:
+* Injection attacks - By validating user input and safe handling of data on the server-side.
 
-* Helmet.js
-* Rate limiting
-* JWT verification middleware
-* Environment variable protection
-* Secure API middleware
-* Protected admin routes
+* Unwanted access - By restricting access to the website and parts such as restricted pages, dashboards, and other parts through JWT tokens and sessions.
 
+* Spam submissions - With CAPTCHA and other techniques to block spammers.
+
+Implementation:
+
+* Helmet.js - Use Helmet.js middleware for enhancing HTTP headers, disabling unsafe browser functionalities, securing API endpoints and preventing web security risks.
+
+* Rate limiting - Restrict the rate of requests made by users/IP addresses to the server at any given period of time. This would help prevent brute force attacks and malicious users causing spamming of your server.
+
+* JWT Token verification middleware - Add middleware to verify whether your JWT tokens are secure and allow only access to your private APIs.
+
+* Environment variables protection - Use the dotenv package to secure your database URL, JWT secret keys, SMTP password, API and gateway keys.
+
+* Middleware Security - Use reusable middleware to carry out validations, authentications, sanitizations and error handling for your API.
+
+* Secure Admin Routes - Use role-based access control mechanisms to allow authenticated access to your system administrative functionalities.
 ---
 
-# Performance and Scalability
+## # Performance & Scalability
 
-Optimize:
+Optimization:
 
-* Bundle size
-* Animation rendering
+* Bundle Size
+* Animations
 * Database queries
-* API response times
-* Image optimization
-* Lazy loading
-* Component rendering
+* API responses
+* Images
+* Lazy Loading
+* Components
 
 Ensure:
 
-* High traffic scalability
-* Fast page load times
+* Scalable traffic capacity
+* Quick page loads
 * SEO optimization
-* Accessibility compliance
-* Efficient caching strategies
+* Accessibility adherence
+* Effective caching systems
 
 ---
 
-# Error Handling and Documentation
+# Error Handling & Documentation
 
 ## Error Handling
 
-Handle gracefully:
+Properly manage:
 
-* Failed orders
-* Invalid reservations
-* Authentication failures
+* Order failures
+* Reservation failures
+* Authorization errors
 * Payment failures
-* API validation errors
+* Validation errors
 * Email sending failures
-* Database connection failures
+* Connection failures
 
-Provide:
+Include:
 
-* Structured error responses
-* Backend logging
-* Frontend error states
-* User-friendly notifications
-
----
-
-# Documentation Requirements
-
-Provide documentation for:
-
-* Folder structure
-* API architecture
-* Database schema
-* Environment variables
-* Installation guide
-* Deployment guide
-* Authentication flow
-* Admin dashboard usage
+* Well-formatted error messages
+* Error logging on the backend
+* Error states on the frontend
+* Informative user notifications
 
 ---
 
-# Technology Stack
+# Documentation Requirement
+
+Document the following:
+
+* Folder organization
+* API structure
+* Database structure
+* Variables environment
+* Installation process
+* Deployment process
+* Authorization process
+* Admin dashboard utilization
+
+---
+
+# Tech Stack
 
 ## Frontend
 
@@ -421,29 +481,33 @@ Use:
 * Axios
 * Redux Toolkit / Context API
 
+### Backend
+
+Tools:
+
+- Node.js - Node.js will be used for developing the backend of the app through JavaScript.
+
+- Express.js - This is a framework which can help in developing RESTful APIs through routing, middleware, authentications, validations and other business logics.
+
+- JWT - JWT authentication tools will help in authenticating your route and implementing the required authentications.
+
+- Bcrypt - This is a hashing tool that will help in hashing your password and storing them securely in the database.
+
+- Nodemailer - This will be used for sending emails related to your app such as order confirmation, reservation confirmation and other emails.
+
+- Dotenv - This tool helps in managing your environment variables such as database URI, JWT secret key, API keys, SMTP credentials and other required variables.
+
+- Multer - An intermediate layer middleware will help in uploading files including menu, gallery, user profile pictures and other required files.
+
 ---
 
-## Backend
+### Database
 
-Use:
+Database:
 
-* Node.js
-* Express.js
-* JWT Authentication
-* bcrypt
-* Nodemailer
-* dotenv
-* Multer
+- MongoDB - The database in which all data will be stored, such as user details, menu, order details, reviews, contact form entries, reservations and other details.
 
----
-
-# Database
-
-Use:
-
-* MongoDB
-* Mongoose ODM
-
+- Mongoose ODM - You can use Mongoose ODM for schemas, validations, querying and managing relations between models.
 ---
 
 # Optional Advanced Features
