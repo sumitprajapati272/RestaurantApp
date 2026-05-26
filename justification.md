@@ -1,4 +1,4 @@
-# Likert Score - 6
+
 # Final Verdict
 Response B is better than Response A. Response B provides a significantly more production-ready and scalable architecture by implementing Next.js App Router structure, Zod validation schemas, NextAuth-ready authentication flow, proper MongoDB model separation, and secure API route handling for reservations. It also maintains consistent environment variable naming conventions such as EMAIL_USER, EMAIL_PASS, and EMAIL_TO across both .env.local and API route implementations, avoiding silent configuration failures during email dispatch.
 Response A, while functional for a beginner-level MERN setup, lacks enterprise-grade structure and misses advanced validation, sanitization, and modular architectural practices required for a true industrial-level implementation. It also provides a less scalable frontend/backend separation and does not include secure schema validation pipelines like Zod or structured API processing layers.
