@@ -1,16 +1,15 @@
-# 🍽️ Industrial-Level Full-Stack Restaurant Website Prompt
+#  Industrial-Level Full-Stack Restaurant Website Prompt
 
 ## Context and Role
 
-As a Full-Stack MERN Developer specializing in modern web experiences and scalable production systems, you are responsible for designing and implementing a high-performance Restaurant Website with immersive UI animations, secure backend architecture, and a production-ready ordering ecosystem.
+In the capacity of a Full-Stack MERN Developer, your mandate is to develop a high-performing Restaurant Website characterized by immersive user interface animations, robust back-end design, and a scalable online ordering ecosystem.
 
-The application must provide a modern digital restaurant experience that combines responsive UI/UX, smooth storytelling animations, online food ordering, table reservations, secure authentication, cloud database management, and administrative controls.
+The application should be designed to offer an excellent digital experience in the form of modern user interface/user experience design, seamless storyboarding animations, online food orders, table reservations, robust back-end security, cloud-based database management, and management features.
 
-The website should feel premium, interactive, scalable, and visually engaging while maintaining accessibility, responsiveness, security, and performance optimization.
+Premium, interactive, scalable, visually attractive but at the same time accessible, responsive, and secure should be the characteristics of the website.
 
-Additionally, the system must include secure customer interaction flows, automated email notifications, and a robust admin management dashboard.
-
----
+Moreover, it should be noted that secure customer engagement, email automation capabilities, and admin management features should be incorporated into the system.
+ 
 
 # Objective
 
@@ -21,10 +20,10 @@ Develop a complete industrial-level full-stack Restaurant Website that:
 * Supports online food ordering and cart management.
 * Includes secure JWT authentication and profile management.
 * Implements a fully functional table reservation system.
-* Provides an admin dashboard for restaurant management.
-* Stores customer, reservation, menu, and order data securely.
-* Triggers automated email notifications for customer interactions.
-* Maintains production-level responsiveness, accessibility, scalability, and security.
+* Provides a restaurant management interface.
+* Stores securely customer data, booking data, menu card details, and order details.
+* Provides automated email service for customers whenever needed.
+* Guarantees production-quality performance and security of the system.
 
 ---
 
@@ -74,11 +73,15 @@ The restaurant website must include:
 
 The layout must be:
 
-* Fully responsive (mobile, tablet, desktop)
-* SEO optimized
-* Accessible using semantic HTML and ARIA labels
-* Optimized for Core Web Vitals
-* Modern and visually polished
+* Response for all devices (mobile, tablets, and computers)
+* SEO
+* Website accessibility through semantic tags and ARIA labels in HTML
+* Compliance with Core Web Vitals
+* Updated design and styles
+* Testing across browsers
+* Visual hierarchy, spacing, and typography
+* A “mobile first” philosophy for responsive design
+* Image optimization and lazy loading
 
 ---
 
